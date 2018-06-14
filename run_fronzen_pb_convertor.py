@@ -18,8 +18,8 @@
 import sys
 from os import getcwd
 
-input_model_path    = getcwd()+'/pb_and_ckpt/lenet5/'
-output_model_path   = getcwd()+'/pb_and_ckpt/lenet5/frozen_pb_out/'
+input_model_path    = getcwd()+'/pb_and_ckpt/runtrain-20180613-yglee/'
+output_model_path   = getcwd()+'/pb_and_ckpt/runtrain-20180613-yglee/frozen_pb_out/'
 
 # The output node name is from Tensorboard
 output_node_names   = 'model_out/Softmax'
@@ -32,9 +32,9 @@ from tflite_convertor import TFliteConvertor
 
 tflite_convertor = TFliteConvertor()
 
-tflite_convertor.set_config_for_frozen_graph(input_dir_path=input_model_path+'runtrain-20180405161551/',
-                                             input_pb_name='tf_graph_def_lenet5.pb',
-                                             input_ckpt_name='lenet5_model_variable.ckpt',
+tflite_convertor.set_config_for_frozen_graph(input_dir_path=input_model_path,
+                                             input_pb_name='net.pb',
+                                             input_ckpt_name='net.pbtxt',
                                              output_dir_path=output_model_path,
                                              output_node_names=output_node_names)
 
