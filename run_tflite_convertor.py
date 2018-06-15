@@ -21,15 +21,15 @@ sys.path.insert(0,  getcwd()+'/convertor/')
 from tflite_convertor import TFliteConvertor
 
 # your frozen graph pb
-input_frozen_pb_path    = getcwd()+'/pb_and_ckpt/lenet5/frozen_pb_out/'
+input_frozen_pb_path    = getcwd()+'/pb_and_ckpt/runtrain-20180613-yglee/frozen_pb_out/'
 sys.path.insert(0,  input_frozen_pb_path)
 
 # your dir for exporting tflite file
-output_tflite_path   = getcwd()+'/pb_and_ckpt/lenet5/tflite_out/'
+output_tflite_path   = getcwd()+'/pb_and_ckpt/runtrain-20180613-yglee/tflite_out/'
 
 
 # your dir path for tensorflow source
-PATH_TENSORFLOW_SRC = '/Users/jwkangmacpro/SourceCodes/tensorflow/'
+PATH_TENSORFLOW_SRC = '/Users/canapio/Project/tensorflow/'
 
 
 # The output/input node names are obtained from Tensorboard
@@ -46,8 +46,8 @@ tflite_convertor = TFliteConvertor()
 # tflite config
 tflite_convertor.set_config_for_tflite(input_dir_path   =input_frozen_pb_path,
                                     output_dir_path     =output_tflite_path,
-                                    input_pb_file       ='frozen_tf_graph_def_lenet5.pb',
-                                    output_tflite_file  ='tflite_lenet5.tflite',
+                                    input_pb_file       ='frozen_net.pb',
+                                    output_tflite_file  ='tflite_net.tflite',
                                     inference_type      ='FLOAT',
                                     input_shape         = input_shape_str,
                                     input_array         = input_node_names,

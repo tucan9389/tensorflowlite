@@ -22,7 +22,7 @@ input_model_path    = getcwd()+'/pb_and_ckpt/runtrain-20180613-yglee/'
 output_model_path   = getcwd()+'/pb_and_ckpt/runtrain-20180613-yglee/frozen_pb_out/'
 
 # The output node name is from Tensorboard
-output_node_names   = 'model_out/Softmax'
+output_node_names   = 'HG/last5/Sigmoid'
 
 sys.path.insert(0,  input_model_path)
 sys.path.insert(0,  getcwd()+'/convertor/')
@@ -34,7 +34,7 @@ tflite_convertor = TFliteConvertor()
 
 tflite_convertor.set_config_for_frozen_graph(input_dir_path=input_model_path,
                                              input_pb_name='net.pb',
-                                             input_ckpt_name='net.pbtxt',
+                                             input_ckpt_name='net.ckpt',
                                              output_dir_path=output_model_path,
                                              output_node_names=output_node_names)
 

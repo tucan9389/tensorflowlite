@@ -248,8 +248,8 @@ class TFliteConvertor(object):
         # bazel clean
         bazel_clean_cmd = 'bazel clean --expunge'
         shell_out = check_output(bazel_clean_cmd,shell=True)
-        print ('$ ' + bazel_clean_cmd)
-        print ('> ' + shell_out)
+        print('$ ' + bazel_clean_cmd)
+        print('> ' + shell_out)
 
         # main toco command
         toco_build_cmd1 = 'bazel run --config=opt //tensorflow/contrib/lite/toco:toco -- '
